@@ -58,6 +58,15 @@
                 input.remove()
             }
         }
+
+        let tab = document.querySelector('.tab')
+        tab.onclick =(e)=>{
+            e.preventDefault()
+            let clone = document.querySelector(".dynamic:first-child").cloneNode(true)
+            document.querySelector(".dynamic:last-of-type").insertAdjacentElement("afterend",clone)            
+
+        }
+
     </script>
 </body>
 
