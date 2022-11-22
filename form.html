@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form by use of JS </title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div id="wrapper">
+        <form action="">
+            <div class="dynamic">
+                <input type="text" placeholder="Name"><br>
+                <input type="email" placeholder="email"><br>
+                <div class="inner">
+                    <input type="text" placeholder="enter the role">
+                    <a href="" class="plus" >+</a>
+                </div>
+                <select name="" id="">
+                    <option value="" selected disabled>Enter the city name</option>
+                    <option value="jaipur">jaipur</option>
+                    <option value="kota">kota</option>
+                    <option value="sikar">sikar</option>
+                    <option value="udaipur">udaipur</option>
+                    <option value="other">other</option>
+                </select>
+            </div>
+            <input type="submit" value="register">
+            <a href="" class="tab">Duplicate</a>
+        </form>
+    </div>
+    <script>
+        let plus = document.querySelector(".plus")
+        plus.onclick = (e)=>{
+            e.preventDefault();
+            let div = document.createElement("div")
+            let input = document.createElement("input")
+            // let input = document.querySelector("input")
+            input.setAttribute("type","text")
+            input.setAttribute("placeholder","Enter the Role")
+            div.appendChild(input)
+            document.querySelector(".inner").children[0].insertAdjacentElement("afterend",div)
+        }
+
+        let select = document.querySelector("select")
+        select.onchange =()=>{
+            if(select === "other"){
+                
+            }
+        }
+    </script>
+</body>
+</html>
