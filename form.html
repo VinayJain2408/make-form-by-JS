@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>form by use of JS </title>
     <link rel="stylesheet" href="form.css">
 </head>
+
 <body>
     <div id="wrapper">
         <form action="">
@@ -15,7 +17,7 @@
                 <input type="email" placeholder="email"><br>
                 <div class="inner">
                     <input type="text" placeholder="enter the role">
-                    <a href="" class="plus" >+</a>
+                    <a href="" class="plus">+</a>
                 </div>
                 <select name="" id="">
                     <option value="" selected disabled>Enter the city name</option>
@@ -32,23 +34,31 @@
     </div>
     <script>
         let plus = document.querySelector(".plus")
-        plus.onclick = (e)=>{
+        plus.onclick = (e) => {
             e.preventDefault();
             let div = document.createElement("div")
             let input = document.createElement("input")
             // let input = document.querySelector("input")
-            input.setAttribute("type","text")
-            input.setAttribute("placeholder","Enter the Role")
+            input.setAttribute("type", "text")
+            input.setAttribute("placeholder", "Enter the Role")
             div.appendChild(input)
-            document.querySelector(".inner").children[0].insertAdjacentElement("afterend",div)
+            document.querySelector(".inner").children[0].insertAdjacentElement("afterend", div)
         }
-
+        let input;
         let select = document.querySelector("select")
-        select.onchange =()=>{
-            if(select === "other"){
-                
+        select.onchange = () => {
+            // let input = document.createElement("input")
+            if (select.value === "other") {
+                input = document.createElement("input")
+                input.setAttribute("type", "text")
+                input.setAttribute("placeholder", "Enter the Role")
+                document.querySelector("select").insertAdjacentElement("afterend", input)
+            }
+            else {
+                input.remove()
             }
         }
     </script>
 </body>
+
 </html>
